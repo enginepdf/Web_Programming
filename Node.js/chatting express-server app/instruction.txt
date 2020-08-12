@@ -1,0 +1,4 @@
+
+type 'node express-server.js' on terminal to start server
+
+run index.html

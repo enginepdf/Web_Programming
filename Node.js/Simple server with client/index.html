@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <style>
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      .requesttext {
+        resize: none;
+        font-size: 1.5rem;
+        width: 75%;
+        border: 1.5px solid #000;
+        height: 15%;
+      }
+      #responsetext {
+        resize: none;
+        font-size: 2rem;
+        width: 75%;
+        border: 1.5px solid #000;
+        height: 15%;
+      }
+     .notice {
+      font-style: italic;
+      }
+      #send{
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="notice">
+        Request
+      </div>
+      <br>
+      <textarea
+        placeholder="Write down message here to send it to the server"
+        class="requesttext"
+      ></textarea>
+      <div>
+      <button id="send">Send</button>
+      </div>
+      <br>
+      <br>
+      <div class="notice">
+        Response
+      </div>
+      <pre id="responsetext"></pre>
+    </div>
+
+    <script src="./App.js"></script>
+  </body>
+</html>

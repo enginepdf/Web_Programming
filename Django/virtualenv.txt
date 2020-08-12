@@ -1,0 +1,5 @@
+which python   // python location
+
+python3 -m venv <name>
+
+source name/bin/activate

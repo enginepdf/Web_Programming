@@ -1,0 +1,5 @@
+python manage.py migrate  # migrate models into database
+
+python manage.py makemigrations <app-name> # make migrations related files
+
+python manage.py migrate # apply to the app

@@ -1,0 +1,7 @@
+npm init
+npm install node
+npm install express
+npm install cors
+npm install body-parser
+
+node staticexpress.js to start the server on http://localhost:9999
