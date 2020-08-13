@@ -1,3 +1,5 @@
 django-admin startproject <project-name>  
 
 django-admin startapp <app-name>  // python manage.py startapp <app-name>
+
+python manage.py runserver 0.0.0.0:8000 // developement server
