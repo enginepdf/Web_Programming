@@ -1,0 +1,37 @@
+* {
+    box-sizing : border-box;
+}
+div {
+    border : 1px dashed red;
+}
+
+body{
+   position:absolute; 
+   overflow:hidden;
+   top:0;
+   left:0;
+   right:0;
+   bottom:0;
+}
+
+#component{
+     background-color: blue;
+     float:left;
+     height: 100%;
+     width: calc(100% - 450px)
+}
+
+#parts{
+    float:right;
+    width: 450px;
+    height:100%
+}
+
+#part1{
+    background-color: orange;
+    height: calc(100% - 350px)
+}
+#part2{
+    background-color: grey;
+    height : 350px
+}

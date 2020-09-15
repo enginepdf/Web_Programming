@@ -1,0 +1,34 @@
+div{
+    background:orange;
+    border-color:blue;
+    border-width: thick;
+    /* border-style:dotted, double */
+}
+
+p{
+    color:green;
+    text-decoration:line-through;
+}
+
+body{
+    background:url(http://);
+    background-repeat:no-repeat;
+}
+
+h2 + ul{   /* ul right after h2  */
+ border: 5px double green
+}
+
+h2 li{  /* li inside of h2  */
+    color:blue;
+}
+
+ol a[href='']{
+    color:navy;
+    border: 2px solid brown;
+}
+
+#fontsize{
+    font-size: 2.0em;
+}
+/* 1em=16px by default, 2.0em means double size of body tag font-size */

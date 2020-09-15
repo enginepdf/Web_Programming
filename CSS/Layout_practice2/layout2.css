@@ -1,0 +1,30 @@
+* {
+    box-sizing : border-box;
+}
+
+.col{
+ border:1px dashed red;
+ float: left;
+ height: 100%;
+}
+.row{
+    border:1px dashed grey
+}
+
+#component{
+     border : 1px dashed black;
+     width: 1000px;
+     height: 900px;
+     padding: 10px;
+}
+
+.h70 {height : 70%}
+.h60 {height : 60%}
+.h30 {height : 30%}
+.h10 {height : 10%}
+.w40 {width: 40%}
+.w60 {width: 60%}
+
+
+
+
