@@ -19,7 +19,7 @@ export default class App extends Component{
 
  multiply(){
      this.setState((state)=>
-     ({count : state.count*2}), ()=> console.log(this.state.cound)
+     ({count : state.count*2}), ()=> console.log(this.state.count)
      )
  }
 
