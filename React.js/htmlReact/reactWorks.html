@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Works</title>
+</head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@16.8.6/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.development.js"></script>
+    
+    <script>
+        const Menu=(item)=>{
+            return React.createElement('div',{},[
+                React.createElement('h3',{},item.name),
+                React.createElement('p',{},item.price)
+            ]);
+        };
+
+        const App=()=>{
+            return React.createElement('div',{},[
+                React.createElement('h1',{},'Choose what you want to eat'),
+                React.createElement(Menu,{name:'chicken',price:'15000 won'}),
+                React.createElement(Menu,{name:'BBQ',price:'9000 won'}),
+                React.createElement(Menu,{name:'Budae-JJi-gae',price:'12000 won'})
+            ]);
+        };
+
+        ReactDOM.render(
+            React.createElement(App),
+            document.getElementById('root')
+        );
+    </script>
+    
+  </body>
+</html>
