@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 import Timer from  './Timer';
 import './App.css';
 
-export default class App extends Component{
+export default class App extends Component{ // with create react app, babel, you can use state without constructor(alternative class syntax) 
 
  constructor(props){
      super(props);
@@ -15,11 +15,12 @@ export default class App extends Component{
      this.multiply=this.multiply.bind(this);
      this.divide=this.divide.bind(this);
      this.onoffTimer=this.onoffTimer.bind(this);
+     // this.props=props
  }
 
  multiply(){
-     this.setState((state)=>
-     ({count : state.count*2}), ()=> console.log(this.state.count)
+     this.setState((prevState, prevProps)=>
+     ({count : prevState.count*2}), ()=> console.log(this.state.count)
      )
  }
 
