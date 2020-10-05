@@ -65,3 +65,56 @@ class PublisherViewSet(viewsets.ModelViewSet):
     serializer_class = PublisherSerializer
     # authentication_classes = (TokenAuthentication, )
     permission_classes = (AllowAny,)
+
+
+# class AdminUserViewSet(viewsets.ModelViewSet):
+#     queryset = AdminUser.objects.all()
+#     serializer_class = AdminUserSerializer
+#     permission_classes = (AllowAny,)
+#
+#     @action(detail=False, methods=['POST'])
+#     def login(self, request):
+#       if 'Id' in request.data:
+#
+#         Id=request.data['Id']
+#         password=request.data['password']
+#
+#         try:
+#           # print(acc.token)
+#           URL1=
+#           # data={'Id': '', 'password':''}
+#           # headers = {'Content-type': 'application/json', 'Accept': 'text/plain'}
+#           data={'Id': Id, 'password':password}
+#           res=requests.post(URL1, json=data)
+#
+#           # acc=AdminUser.objects.get(Id=Id)
+#           acc, created=AdminUser.objects.get_or_create(Id=Id)
+#           acc.token=token
+#           acc.save()
+#           # request.session.set_expiry(24*60*60*30) # for 30 days
+#           # request.session['token']=token
+#           response={'message':'logged in', 'token':token}
+#           return Response(response, status=status.HTTP_201_CREATED)
+#           # response.set_cookie('token',token)
+#
+#         # request.session['token'] = token
+#           return response
+#
+#         except:
+#               response = {'message': "ID/Password does't match"}
+#               return Response(response, status=status.HTTP_400_BAD_REQUEST)
+#
+#       else:
+#           response = {'message': 'ID, Password required'}
+#           return Response(response, status=status.HTTP_400_BAD_REQUEST)
+
+# @action(detail=False)
+    # def logout(self, request):
+    #   try:
+    #     # response.delete_cookie('token')
+    #     # print(request.session['token'])
+    #     # del request.session['token']
+    #     request.session.clear()
+    #   except KeyError:
+    #     pass
+    #   return HttpResponse("logged out.")
