@@ -19,8 +19,9 @@ class Publisher(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=200)
     price=models.IntegerField(default=0)
-    release=models.DateTimeField(auto_now_add=False, blank=True)
+    release=models.DateTimeField(auto_now_add=False, blank=True, null=True)
     # arthur=models.ManyToManyField('Arthur', through='Book_Arthur', through_fields=('book','arthur'),)
+    # arthur=models.ManyToManyField('Arthur', through='Book_Arthur')
     arthur=models.ManyToManyField('Arthur')
     publisher=models.ForeignKey('Publisher', on_delete=models.CASCADE)
 

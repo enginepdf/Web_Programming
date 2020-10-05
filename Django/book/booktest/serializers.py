@@ -20,9 +20,13 @@ class ArthurSerializer(serializers.ModelSerializer):
         fields = ('id','name') # __all__
 
 class BookSerializer(serializers.ModelSerializer):
+    arthur = serializers.PrimaryKeyRelatedField(
+        many=True,
+        queryset=Arthur.objects.all()
+    )
     class Meta:
         model = Book
-        fields = ('id', 'title', 'release', 'publisher','price')
+        fields = ('id', 'title', 'release', 'publisher','price','arthur')
 
 class PublisherSerializer(serializers.ModelSerializer):
     class Meta:
