@@ -26,7 +26,7 @@ class BookViewSet(viewsets.ModelViewSet):
     # authentication_classes = (TokenAuthentication, )
     permission_classes = (AllowAny,)
 
-    @action(detail=True, methods=['POST']) # detail=True means specific id is required
+    @action(detail=False, methods=['POST']) # detail=True means specific id is required
     def register(self, request, pk=None): # default pk value is None
         if 'title' in request.data:
 
