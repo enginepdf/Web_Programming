@@ -5,17 +5,17 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.contrib.auth.models import User
 from .models import Arthur, Book, Publisher
-from .serializers import ArthurSerializer, BookSerializer, PublisherSerializer, UserSerializer
+from .serializers import ArthurSerializer, BookSerializer, PublisherSerializer
 
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-    permission_classes = (AllowAny,)
+# class UserViewSet(viewsets.ModelViewSet):
+#     queryset = User.objects.all()
+#     serializer_class = UserSerializer
+#     permission_classes = (AllowAny,)
 
 class ArthurViewSet(viewsets.ModelViewSet):
     queryset = Arthur.objects.all()
     serializer_class = ArthurSerializer
-    authentication_classes = (TokenAuthentication, )  # for Django notice token which is sent to server
+    # authentication_classes = (TokenAuthentication, )  # for Django notice token which is sent to server
     permission_classes = (AllowAny,)
 
 
@@ -23,7 +23,7 @@ class ArthurViewSet(viewsets.ModelViewSet):
 class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
-    authentication_classes = (TokenAuthentication, )
+    # authentication_classes = (TokenAuthentication, )
     permission_classes = (AllowAny,)
 
     @action(detail=True, methods=['POST']) # detail=True means specific id is required
@@ -33,19 +33,23 @@ class BookViewSet(viewsets.ModelViewSet):
             title=request.data['title']
             release=request.data['release']
             publisher=request.data['publisher']
+            price=request.data['price']
+            arthur=request.data['arthur']
 
             try:
                 data = Arthur.objects.get(title=title) # if already exists
                 data.title=title
                 data.release=release
                 data.publisher=publisher
+                data.price=price
+                data.arthur=arthur
 
                 data.save()
                 serializer = BookSerializer(data, many=False)
                 response = {'message': 'Book updated', 'result': serializer.data}
                 return Response(response, status=status.HTTP_200_OK)
             except:
-                data = Book.objects.create(title=title, release=release, publisher=publisher)
+                data = Book.objects.create(title=title, release=release, publisher=publisher, price=price, arthur=arthur)
                 serializer = BookSerializer(data, many=False)
                 response = {'message': 'Book created', 'result': serializer.data}
                 return Response(response, status=status.HTTP_200_OK)
@@ -59,5 +63,5 @@ class BookViewSet(viewsets.ModelViewSet):
 class PublisherViewSet(viewsets.ModelViewSet):
     queryset = Publisher.objects.all()
     serializer_class = PublisherSerializer
-    authentication_classes = (TokenAuthentication, )
-    permission_classes = (IsAuthenticated,)
+    # authentication_classes = (TokenAuthentication, )
+    permission_classes = (AllowAny,)
