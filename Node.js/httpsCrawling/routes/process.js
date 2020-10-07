@@ -49,15 +49,14 @@ try{
 
 router.get("/:order", async (req, res) => {
   let order=req.params.order;
-  try{
-    crawling.readFile(`./data/${order}.txt`);
-    count++;
-    res.status(201).send('ok');
-
-  } catch(err){
-    res.status(404).send('error')
+  let filename=`./data/${order}.txt`;
+  
+  if (fs.existsSync(filename)) {
+      crawling.readFile(filename).then(data=>
+      res.status(200).send({data}));
+  } else{
+      res.status(404).send('not found');
   }
-
 });
 
 module.exports = router;
