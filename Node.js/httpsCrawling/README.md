@@ -1,7 +1,3 @@
-
-
-<img width="1241" alt="Screen Shot 2020-10-07 at 9 41 26 PM" src="https://user-images.githubusercontent.com/62423408/95332293-2ae3bb00-08e6-11eb-8f23-daf021e656da.png">
-
-<img width="923" alt="Screen Shot 2020-10-07 at 9 41 41 PM" src="https://user-images.githubusercontent.com/62423408/95332291-2a4b2480-08e6-11eb-9dcf-63ff0dcfeeea.png">
-
-<img width="937" alt="Screen Shot 2020-10-07 at 9 41 45 PM" src="https://user-images.githubusercontent.com/62423408/95332279-261f0700-08e6-11eb-822e-7ad9afa5c4ac.png">
+<img width="1241" alt="1" src="https://user-images.githubusercontent.com/62423408/95332709-c5dc9500-08e6-11eb-9055-1a9eccfeb499.png">
+<img width="923" alt="2" src="https://user-images.githubusercontent.com/62423408/95332696-c117e100-08e6-11eb-93e4-341230c4e41e.png">
+<img width="937" alt="3" src="https://user-images.githubusercontent.com/62423408/95332707-c412d180-08e6-11eb-91ad-8c2c876a9635.png">
