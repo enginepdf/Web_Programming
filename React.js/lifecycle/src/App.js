@@ -4,6 +4,18 @@ import './App.css';
 
 import Lifecycles from './lifecycles.component';
 
+// const  styles={
+//   color:'green',
+//   fontSize:'15px'
+// }
+
+// function App(){
+//   return(
+//     <div style={styles}></div>
+//   )
+// }
+
+
 class App extends React.Component {
   constructor() {
     super();
