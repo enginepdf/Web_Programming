@@ -1,7 +1,6 @@
 var express = require('express')
 var parseurl = require('parseurl')
 var session = require('express-session')
-var FileStore = require('session-file-store')(session)
 
 var app = express()
 
@@ -9,7 +8,6 @@ app.use(session({
     secret: 'sessionsecret',
     resave: false,
     saveUninitialized: true,
-    store:new FileStore()
 }))
 
 app.use(function (req, res, next){
