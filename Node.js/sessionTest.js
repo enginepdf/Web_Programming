@@ -1,0 +1,32 @@
+var express = require('express')
+var parseurl = require('parseurl')
+var session = require('express-session')
+var FileStore = require('session-file-store')(session)
+
+var app = express()
+
+app.use(session({
+    secret: 'sessionsecret',
+    resave: false,
+    saveUninitialized: true,
+    store:new FileStore()
+}))
+
+app.use(function (req, res, next){
+    if(!req.session.views){
+        req.session.views={};
+    }
+    var pathname=parseurl(req).pathname;
+
+    req.session.views[pathname]=(req.session.views[pathname] || 0)+1;
+    
+    next();
+})
+
+app.get('/test1', function (req, res, next){
+    res.send('This page views '+req.session.views['/test1']+' times');
+})
+
+app.get('/test2', function (req, res, next){
+    res.send('This page views '+req.session.views['/test2']+' times');
+})
