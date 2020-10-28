@@ -4,6 +4,8 @@ var session = require('express-session')
 
 var app = express()
 
+let PORT=8900;
+
 app.use(session({
     secret: 'sessionsecret',
     resave: false,
@@ -28,3 +30,7 @@ app.get('/test1', function (req, res, next){
 app.get('/test2', function (req, res, next){
     res.send('This page views '+req.session.views['/test2']+' times');
 })
+
+app.listen(PORT, () => {
+    console.log(`server listen on ${PORT}`);
+  });
