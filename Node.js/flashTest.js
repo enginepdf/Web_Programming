@@ -1,6 +1,6 @@
 var express = require('express')
 var session = require('express-session')
-var bodyParser=requier('body-parser');
+var bodyParser=require('body-parser');
 var flash=require('connect-flash');
 
 var app = express();
