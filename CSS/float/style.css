@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearPoint:after {  
+    content: ""; /* content comes right after the tag */
+    display: table; /* making table with the content("") */
+    clear: both; /* float: left, float: right will be cleared.  clear: left means float:left to be cleared, clear: right means float:right to be cleared */
+}
+
+body {
+    font-family: Arial; 
+    font-size: 20px;
+}
+
+.float3 {
+    float: left; 
+    /* width:50%; */
+    background-color:rgb(180, 133, 4);
+}
+
+
+.float1 {
+    width: 50%;
+    float: left; 
+    padding-right: 20px;
+    background-color: blue;
+}
+
+.float2 {
+    width: 25%;
+    float: left;
+    background-color: green;
+}
