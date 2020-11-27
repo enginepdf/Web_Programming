@@ -11,4 +11,12 @@ var email = $("input[type=email]").val();
 console.log(email);  // email here
 
 console.log(link.prop("checked")); // undefined
+
+$("p").on("click", function(){
+ $(this).fadeOut(function(){
+     $(this).attr('font-size', "20px").delay(2000).fadeIn();
+ })
+})
+
+
 });
