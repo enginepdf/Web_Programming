@@ -1,0 +1,3 @@
+npm install --save-dev lite-server  
+
+npm start  // then lite server goes and reflects new updates automatically on localhost:3000
