@@ -18,5 +18,16 @@ $("p").on("click", function(){
  })
 })
 
+$("#list").click({info:"this works"}
+    , function(event){
+        display(event.data);
+      });
+      
+      function display(item){
+          let data=item.info || "this also works";
+
+          alert(data);
+      }
+
 
 });
