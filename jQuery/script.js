@@ -29,5 +29,9 @@ $("#list").click({info:"this works"}
           alert(data);
       }
 
+$("li li").addClass(function(index){
+    $(this).addClass("list-"+index);
+});
+
 
 });
