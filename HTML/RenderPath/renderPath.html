@@ -1,0 +1,32 @@
+<!-- Reference : https://ko.javascript.info/script-async-defer -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Render Path</title>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => alert("DOM is loaded"));
+    </script>
+    <script defer src="https://javascript.info/article/script-async-defer/long.js"></script> <!-- before DOMContentLoaded -->
+    <script defer src="https://javascript.info/article/script-async-defer/small.js"></script>
+    <script>
+    function loadScript(src) {
+        let script = document.createElement('script');
+        script.src = src;
+        script.async = false;  // long.js runs first 
+        document.body.append(script);
+      }
+      window.onload = function () {
+        loadScript("./script1.js");
+      };
+      loadScript("./script2.js");
+    </script>  
+</body>
+</html>
+
+<!-- script2.js -> long.js -> small.js -> DOMContentLoaded -> script1.js -->
