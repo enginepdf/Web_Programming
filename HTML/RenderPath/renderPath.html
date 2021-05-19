@@ -6,14 +6,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script1.js"></script>
     <title>Render Path</title>
 </head>
 <body>
     <script>
         document.addEventListener('DOMContentLoaded', () => alert("DOM is loaded"));
     </script>
-    <script defer src="https://javascript.info/article/script-async-defer/long.js"></script> <!-- before DOMContentLoaded -->
-    <script defer src="https://javascript.info/article/script-async-defer/small.js"></script>
+    <script defer src="./script2.js"></script> <!-- before DOMContentLoaded -->
     <script async src="./script3.js"></script>
     <script>
     function loadScript(src) {
@@ -22,12 +22,15 @@
         script.async = false;  // long.js runs first 
         document.body.append(script);
       }
+      loadScript("./script4.js");
       window.onload = function () {
-        loadScript("./script1.js");
-      };
-      loadScript("./script2.js");
+        loadScript("./script5.js");
+      };  
     </script>  
 </body>
+    <script async src="./script6.js"></script>
+    <script defer src="./script7.js"></script>
 </html>
 
-<!-- script3.js -> script2.js -> long.js -> small.js -> DOMContentLoaded -> script1.js -->
+<!-- script1 -> script2 -> script7 -> DOM is loaded -> script3 -> script6 -> script4 -> script5 -->
+<!-- depending on the size of each script, the order can change in production environment if scripts downloading required -->
