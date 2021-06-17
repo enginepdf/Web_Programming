@@ -1,8 +1,13 @@
+// Reference 
+
+//     https://www.npmjs.com/package/cors
+
 const express = require('express');
 const app = express();
 const cors = require('cors');
 
-var corsOptions = {
+let whitelist = ['http://example1.com', 'http://example2.com'];
+let corsOptions = {
     origin: function (origin, callback) {
       if (whitelist.indexOf(origin) !== -1 || !origin) {
         callback(null, true)
